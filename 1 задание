@@ -1,0 +1,41 @@
+public class RandomArrayExample {
+    public static void main(String[] args) {
+        int n = 100;
+        double[] array = new double[n];
+
+        // Заполняем массив случайными числами
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Math.random();
+        }
+
+        // Проверка на пустой массив
+        if (array.length == 0) {
+            System.out.println("Массив пуст!");
+            return;
+        }
+
+        // Инициализация переменных
+        double max = array[0];
+        double min = array[0];
+        double sum = 0;
+
+        // Поиск максимума, минимума и суммы элементов
+        for (double value : array) {
+            if (value > max) {
+                max = value;
+            }
+            if (value < min) {
+                min = value;
+            }
+            sum += value;
+        }
+
+        // Вычисление среднего значения
+        double avg = sum / array.length;
+
+        // Вывод результатов с форматированием
+        System.out.println("Максимальное значение: " + String.format("%.4f", max));
+        System.out.println("Минимальное значение: " + String.format("%.4f", min));
+        System.out.println("Среднее значение: " + String.format("%.4f", avg));
+    }
+}
