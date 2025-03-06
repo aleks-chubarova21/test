@@ -1,4 +1,4 @@
-public class RandomArrayExample {
+public class Random {
     public static void main(String[] args) {
         int n = 10; // Размер массива
         double[] array = new double[n]; // Создаем массив
