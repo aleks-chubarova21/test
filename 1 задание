@@ -1,19 +1,16 @@
 public class Random {
     public static void main(String[] args) {
-        int n = 10; // Размер массива
-        double[] array = new double[n]; // Создаем массив
+        int n = 10;
+        double[] array = new double[n];
 
-        // Заполняем массив случайными числами
         for (int i = 0; i < array.length; i++) {
-            array[i] = Math.random(); // Генерация случайного числа от 0.0 до 1.0
+            array[i] = Math.random(); 
         }
 
-        // Инициализация переменных
         double max = array[0];
         double min = array[0];
         double sum = 0;
 
-        // Поиск максимума, минимума и суммы элементов
         for (double value : array) {
             if (value > max) {
                 max = value;
@@ -24,10 +21,8 @@ public class Random {
             sum += value;
         }
 
-        // Вычисление среднего значения
         double avg = sum / array.length;
 
-        // Вывод результатов с форматированием
         System.out.println("Максимальное значение: " + max);
         System.out.println("Минимальное значение: " + min);
         System.out.println("Среднее значение: " + avg);
