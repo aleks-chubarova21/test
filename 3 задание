@@ -2,12 +2,8 @@ import java.util.Scanner;
 
 public class BaseConverter {
 
-    public double convertToFahrenheit(double celsius) {
-        return (celsius * 9 / 5) + 32;
-    }
-
-    public double convertToKelvin(double celsius) {
-        return celsius + 273.15;
+    public double convert(double celsius, String toScale) {
+        return toScale.equals("F") ? (celsius * 9 / 5) + 32 : celsius + 273.15;
     }
 
     public static void main(String[] args) {
@@ -16,21 +12,14 @@ public class BaseConverter {
         System.out.print("Введите градусы Цельсия: ");
         double celsius = scanner.nextDouble();
 
-        System.out.print("Выберите конвертацию (1 - в Фаренгейты, 2 - в Кельвины): ");
-        int choice = scanner.nextInt();
+        System.out.print("Выберите конвертацию (F - в Фаренгейты, K - в Кельвины): ");
+        String choice = scanner.next();
 
         BaseConverter converter = new BaseConverter();
-        double result = 0;
+        double result = converter.convert(celsius, choice);
 
-        if (choice == 1) {
-            result = converter.convertToFahrenheit(celsius);
-            System.out.println(celsius + " градусов Цельсия = " + result + " градусов Фаренгейта");
-        } else if (choice == 2) {
-            result = converter.convertToKelvin(celsius);
-            System.out.println(celsius + " градусов Цельсия = " + result + " градусов Кельвина");
-        } else {
-            System.out.println("Неверный выбор!");
-        }
+        String scale = choice.equals("F") ? "Фаренгейта" : "Кельвина";
+        System.out.println(celsius + " градусов Цельсия = " + result + " градусов " + scale);
 
     }
 }
