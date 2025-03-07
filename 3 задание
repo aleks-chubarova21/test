@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class BaseConverter {
+
+    public double convertToFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+
+    public double convertToKelvin(double celsius) {
+        return celsius + 273.15;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите градусы Цельсия: ");
+        double celsius = scanner.nextDouble();
+
+        System.out.print("Выберите конвертацию (1 - в Фаренгейты, 2 - в Кельвины): ");
+        int choice = scanner.nextInt();
+
+        BaseConverter converter = new BaseConverter();
+        double result = 0;
+
+        if (choice == 1) {
+            result = converter.convertToFahrenheit(celsius);
+            System.out.println(celsius + " градусов Цельсия = " + result + " градусов Фаренгейта");
+        } else if (choice == 2) {
+            result = converter.convertToKelvin(celsius);
+            System.out.println(celsius + " градусов Цельсия = " + result + " градусов Кельвина");
+        } else {
+            System.out.println("Неверный выбор!");
+        }
+
+    }
+}
