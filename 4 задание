@@ -1,0 +1,12 @@
+public class Clock {
+
+    public static void main(String[] args) {
+        int hours = 3;
+        int minutes = 15;
+
+        double angle = Math.abs((hours % 12) * 30 + minutes * 0.5 - minutes * 6);
+        angle = Math.min(angle, 360 - angle);
+
+        System.out.println("Угол между стрелками: " + angle + " градусов");
+    }
+}
